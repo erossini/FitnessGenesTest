@@ -169,3 +169,11 @@ You find my code in this repository. There are some generic best practises I'm f
 - I organize the code in functional folders: for example in `Interfaces` folder you find all interfaces I use in the project; in `Models` folder I collect models across the projects and so on.
 - If there is a function like `ToNumber()`, it is a good example of an `Extensions`
 - If more classes are functions in common, I prefer to create a base class
+
+### OrderManager
+OrderManager is responsible to read orders from a store and write them. I refactored this class like that
+
+    public class OrderManager<T> where T : OrderFilterBase
+    
+Now you create a new `SmallOrderFilter` or `LargeOrderFilter` inherits from  `OrderFilterBase`: `OrderFilterBase` has all functions to manage orders, the only difference is the number of order you want to filter, as default is 0. I'm not sureyou really need this class because there is only a filter on the list of orders but I assumed you need it.
+
