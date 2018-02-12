@@ -170,10 +170,15 @@ You find my code in this repository. There are some generic best practises I'm f
 - If there is a function like `ToNumber()`, it is a good example of an `Extensions`
 - If more classes are functions in common, I prefer to create a base class
 
+### SmallFilter
+It is an example of implementation of `OrderFilterBase`. The purpose of it is to have a filter for size. I assumed you have more functions in this implementation and then you have to create you `virtual` functions in the base class. If you don't have any other functions, `OrderFilterBase` is not needed.
+
 ### OrderManager
 OrderManager is responsible to read orders from a store and write them. I refactored this class like that
 
     public class OrderManager<T> where T : OrderFilterBase
     
-Now you create a new `SmallOrderFilter` or `LargeOrderFilter` inherits from  `OrderFilterBase`: `OrderFilterBase` has all functions to manage orders, the only difference is the number of order you want to filter, as default is 0. I'm not sureyou really need this class because there is only a filter on the list of orders but I assumed you need it.
+Now you create a new `SmallManager` or `LargeManager` inherits from `OrderFilterBase`: `OrderFilterBase` has all functions to manage orders, the only difference is the number of order you want to filter, as default is 0. I'm not sureyou really need this class because there is only a filter on the list of orders but I assumed you need it.
 
+## Final point of view
+If I don't know the real scope of this code, I find difficult to model the right code. With more details I can code a better implementation for what you need.
