@@ -166,6 +166,6 @@ General comments on the code and design:
 
 ## Code and comments
 You find my code in this repository. There are some generic best practises I'm following:
-- I organize the code in functional folders: for example in {{Interfaces}} folder you find all interfaces I use in the project; in {{Models}} folder I collect models across the projects and so on.
-- If there is a function like {{ToNumber()}}, it is a good example of an {{Extensions}}
+- I organize the code in functional folders: for example in `Interfaces` folder you find all interfaces I use in the project; in `Models` folder I collect models across the projects and so on.
+- If there is a function like `ToNumber()`, it is a good example of an `Extensions`
 - If more classes are functions in common, I prefer to create a base class
